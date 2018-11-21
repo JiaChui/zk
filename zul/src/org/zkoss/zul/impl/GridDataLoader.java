@@ -492,6 +492,7 @@ public class GridDataLoader implements DataLoader, Cropper {
 	protected Set<? extends Component> getAvailableAtClient(int offset, int limit) {
 		final Set<Component> avail = new LinkedHashSet<Component>(32);
 		final Rows rows = _grid.getRows();
+		int rowCount = 0;
 		Row row = (Row) rows.getFirstChild();
 		while (row != null) {
 			if (limit == 0)
@@ -500,6 +501,8 @@ public class GridDataLoader implements DataLoader, Cropper {
 				if (--offset < 0) {
 					--limit;
 					avail.add(row);
+					if (!(row instanceof Group || row instanceof Groupfoot))
+						rowCount++;
 				}
 			}
 			if (row instanceof Group) {
@@ -512,6 +515,7 @@ public class GridDataLoader implements DataLoader, Cropper {
 			if (row != null)
 				row = (Row) row.getNextSibling();
 		}
+		System.out.println(rowCount);
 		return avail;
 	}
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+F86-ZK-3121.zul
+
+        Purpose:
+                
+        Description:
+                
+        History:
+                Tue Nov 20 12:34:22 CST 2018, Created by charlesqiu
+
+Copyright (C) 2018 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+	<grid mold="paging" pageSize="10">
+		<columns sizable="true">
+			<column label="Brand"/>
+			<column label="Processor Type"/>
+			<column label="Memory (RAM)"/>
+			<column label="Price"/>
+			<column label="Hard Drive Capacity"/>
+		</columns>
+		<rows>
+			<forEach begin="1" end="6">
+				<apply template="items"/>
+			</forEach>
+		</rows>
+		<template name="items">
+			<group label="Dell"/>
+			<row>
+				<label style="padding-left:15px" value="Dell E4500 2.2GHz"/>
+				<label value="Intel Core 2 Duo"/>
+				<label value="2GB RAM"/>
+				<label value="$261.00" style="color:green"/>
+				<label value="500GB"/>
+			</row>
+			<group label="Compaq"/>
+			<row>
+				<label style="padding-left:15px" value="Compaq SR5113WM"/>
+				<label value="Intel Core Duo"/>
+				<label value="1GB RAM"/>
+				<label value="$279.00" style="color:green"/>
+				<label value="160GB"/>
+			</row>
+			<groupfoot spans="5">
+				<label value="This a summary about Compaq Desktop PCs"/>
+			</groupfoot>
+		</template>
+	</grid>
+</zk>
