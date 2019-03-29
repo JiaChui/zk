@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+coachmark.zul
+
+		Purpose:
+                
+		Description:
+                
+		History:
+				Fri Mar 08 09:58:14 CST 2019, Created by charlesqiu
+
+Copyright (C) 2019 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+	<window>
+		<button id="button1" label="visible" onClick="coachmark.setVisible(!coachmark.isVisible())"/>
+		<button id="button2" label="target">
+			<attribute name="onClick">
+				coachmark.setTarget("button2");
+				coachmark.setVisible(true);
+			</attribute>
+		</button>
+		<button label="iconClass" onClick='coachmark.setIconClass("z-icon-check")'/>
+		<button label="position" onClick='coachmark.setPosition("after_end")'/>
+		<coachmark id="coachmark" target="button1"
+				   iconClass="z-icon-edit" position="after_center">
+			<vlayout>
+				<textbox placeholder="name"/>
+				<textbox placeholder="age"/>
+			</vlayout>
+		</coachmark>
+	</window>
+	<!--<button label="pp" popup="pp"/>-->
+	<!--<popup id="pp">-->
+	<!--<label value="123"/>-->
+	<!--</popup>-->
+	<!--<chosenbox/>-->
+</zk>
